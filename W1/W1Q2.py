@@ -5,4 +5,4 @@ if n>0:
 elif n<0:
     print("Negative Number")
 else:
-    print
+    print("Zero")
