@@ -1,0 +1,6 @@
+#Print numbers from 1 to 20 except 5
+for i in range(1,21):
+
+    if i==5:
+        continue 
+    print(i)
