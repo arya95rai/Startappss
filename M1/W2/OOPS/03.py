@@ -22,11 +22,11 @@ class Employee:
         print(f"Employee: {self.name}")
 
     def apply_leave(self,days):
-        print(f"{self.name} is on leave for {self.days}")
+        print(f"{self.name} is on leave for {days}")
 
     def increase_salary(self,amount):
-        self.salary+=self.amount
-        print(f"Salary increased by amount: {self.amount}")
+        self.salary+=amount
+        print(f"Salary increased by amount: {amount}")
         print(f"Updated salary: {self.salary}")
 
     def show_details(self):
