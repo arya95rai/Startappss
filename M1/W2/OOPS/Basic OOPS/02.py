@@ -1,58 +1,44 @@
-# Create a Student class
-# Attributes (4)
-# student_id
-# name
-# age
-# marks
+# 2. Student Management System
+# Create a Student class.
+# Attributes (8)
+# •	student_id
+# •	name
+# •	age
+# •	gender
+# •	class_name
+# •	section
+# •	roll_number
+# •	marks
 # Methods (5)
-# study()
-# take_exam()
-# show_result()
-# show_profile()
-# update_marks()
-# Requirements
-# Use a constructor (__init__).
-# Use self correctly.
-# Create at least one object.
-# Call all methods.
-# show_result() should print PASS/FAIL.
-# update_marks() should modify the marks.
+# •	study()
+# •	attend_class()
+# •	take_exam()
+# •	show_result()
+# •	show_profile()
 class Student:
-    def __init__(self,student_id,name,age,marks):
+    def __init__(self,student_id,name,age,gender,class_name,section,roll_number,marks):
         self.student_id=student_id
         self.name=name
         self.age=age
+        self.gender=gender
+        self.class_name=class_name
+        self.section=section
+        self.roll_number=roll_number
         self.marks=marks
     def study(self):
-        print(f"{self.name} is studying")
-
+        print(f"Student {self.name} is studying")
+    def attend_class(self):
+        print(f"Student {self.name} is attending {self.class_name}")
     def take_exam(self):
-        print(f"{self.name} is taking exam")
+        print(f"Student {self.name} with roll no: {self.roll_number} is taking exam")
     def show_result(self):
         if self.marks>=250:
-            print("PASS")
+            print(f"PASS")
         else:
             print("FAIL")
-
-
-
-    def show_profile(self):
-        print(f"Student {self.name}, age {self.age} with student id: {self.student_id} has achieved marks: {self.marks}")
-
-    def update_marks(self,grace):
-        self.marks+=grace
-        print(f"Updated marks: {self.marks}")
         
-    
+    def show_profile(self):
+        print(f"Student {self.name} has {(self.marks/500)*100}%")
 
-student_id=int(input("Enter id: "))
-name=input("Enter name: ")
-age=int(input("Enter your age: "))
-marks=float(input("Enter marks: "))
-obj=Student(student_id,name, age, marks)
-obj.study()
-obj.take_exam()
-obj.show_result()
-obj.show_profile()
-obj.update_marks(15)
+obj=Student()
 
