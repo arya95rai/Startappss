@@ -22,11 +22,12 @@
 # Python found at : 7
 # After Replace : I love Java because Java is simple
 sen=input()
-print(sen[0])
+
 s=sen.strip()
-print(s[0])
-print(s[len(s)-1])
-print(s[0:4])
+print(f"First Character: {sen[0]}")
+print(f"Last Character : {s[0]}")
+print(f"First 5 : {s[0:5]}")
+
 print(s[len(s)-1:len(s)-6:-1])
 print(s[::-1])
 print(s.count('a'))
