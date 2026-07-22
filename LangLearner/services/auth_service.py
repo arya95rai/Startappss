@@ -1,3 +1,4 @@
+import msvcrt
 import os
 import hashlib
 from datetime import datetime
@@ -88,6 +89,29 @@ def ensure_files():
                 "Status"
             ]
         )
+def input_password(prompt="Password : "):
+    #print("CUSTOM PASSWORD FUNCTION CALLED")
+    print(prompt, end="", flush=True)
+
+    password = ""
+
+    while True:
+        ch = msvcrt.getwch()
+
+        if ch == "\r":
+            print()
+            break
+
+        elif ch == "\b":
+            if password:
+                password = password[:-1]
+                print("\b \b", end="", flush=True)
+
+        else:
+            password += ch
+            print("*", end="", flush=True)
+
+    return password
 
 
 
@@ -159,7 +183,7 @@ def register():
 
 
 
-    password = input(
+    password = input_password(
         "Password : "
     ).strip()
 
@@ -177,7 +201,7 @@ def register():
 
 
 
-    confirm = input(
+    confirm = input_password(
         "Confirm Password : "
     ).strip()
 
@@ -434,7 +458,7 @@ def login():
 
 
 
-    password = input(
+    password = input_password(
         "Password : "
     ).strip()
 
@@ -589,7 +613,7 @@ def forgot_password():
 
 
 
-            new_password = input(
+            new_password = input_password(
                 "New Password : "
             ).strip()
 
@@ -607,7 +631,7 @@ def forgot_password():
 
 
 
-            confirm = input(
+            confirm = input_password(
                 "Confirm Password : "
             ).strip()
 
